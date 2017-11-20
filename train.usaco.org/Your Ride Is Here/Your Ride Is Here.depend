@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1454085296 source:/media/abdullahalrifat/Programming/Programming/Programming Contest/Solved/train.usaco.org/Your Ride Is Here /Your Ride Is Here/main.cpp
+	<cstdio>
+	<cstring>
+	<iostream>
+	<string>
+	<fstream>
+
+1454087002 source:/media/abdullahalrifat/Programming/Programming/Programming Contest/Solved/train.usaco.org/Your Ride Is Here /Your Ride Is Here/Your Ride Is Here.cpp
+	<cstdio>
+	<cstring>
+	<iostream>
+	<string>
+	<fstream>
+
