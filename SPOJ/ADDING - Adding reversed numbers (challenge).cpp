@@ -64,7 +64,7 @@ using namespace std;
 
 
 /// Functions Start
- template < class T > T Multiply( T a, T b ){return a * b ;}
+template < class T > T Multiply( T a, T b ){return a * b ;}
 template < class T > T larger( T a, T b ){return ( a > b ? a : b );}
 template < class T > T smaller( T a, T b ){return ( a < b ? a : b );}
 template<class T> T gcd(T a,T b){if(b == 0)return a;return gcd(b,a%b);}
@@ -89,11 +89,11 @@ typedef  vector<bool>            vb;
 typedef  vector< pii >           vii;
 /// TypeDef End
 /// I/O Start
-#define sf                    scanf
-#define pf                    printf
+#define pf1(a)                printf("%lld", a);
 #define pc                    %
 #define nd                    &
-#define sf1(a)                scanf("%d", &a)
+
+#define sf1(a)                scanf("%I64d", &a)
 #define sf2(a,b)              scanf("%d %d",&a, &b)
 #define sf3(a,b,c)            scanf("%d %d %d", &a, &b, &c)
 #define sf4(a,b,c, d)         scanf("%d %d %d %d", &a, &b, &c, &d)
@@ -106,59 +106,31 @@ typedef  vector< pii >           vii;
 #define READ                  freopen("input.txt", "r", stdin);
 #define WRITE                 freopen("output.txt", "w", stdout);
 /// I/O
-auto comp = []( const array<int, 3>& u, const array<int, 3>& v )
-{ return u[2] < v[2]; };
 int main()
 {
-    while(1)
+    int n;
+    sf1(n);
+    while(n--)
     {
-        int n,g;
-        cin>>n>>g;
-        array<int, 3> arr[100010];
-        if(cin.eof( ))
-        {
-            break;
-        }
-        for (int i = 0; i <n ; ++i) {
-            cin>>arr[i][0]>>arr[i][1];
-            arr[i][2]=abs(arr[i][0]-arr[i][1]);
-        }
-        sort( arr, arr + n, comp );
-
-        int points=0;
-        for (int j = 0; j <n ; ++j) {
-            if(arr[j][0]>arr[j][1])
-            {
-                points+=3;
-            } else if(arr[j][0]==arr[j][1] && g>0)
-            {
-                points+=3;
-                g--;
-            }
-            else if(arr[j][0]==arr[j][1]&& g<=0)
-            {
-                points+=1;
-            }
-            else if(arr[j][0]<arr[j][1] && g>0)
-            {
-                int me=arr[j][0];
-                int other=arr[j][1];
-                int diff=other-me;
-                if (g-diff>0)
-                {
-                    points+=3;
-                    g-=diff;
-                    g--;
-
-                }
-                else if(g-diff==0){
-                    points++;
-                    g-=diff;
-                }
-            }
-
-        }
-        cout<<points<<endl;
+        int temp;
+        sf1(temp);
+        int temp1;
+        sf1(temp1);
+        string s = to_string(temp);
+        string s2 = to_string(temp1);
+        reverse(s.begin(),s.end());
+        reverse(s2.begin(),s2.end());
+        stringstream convert(s);
+        int a;
+        if ( !(convert >> a) ) a = 0;
+        stringstream converts(s2);
+        int b;
+        if ( !(converts >> b) ) b = 0;
+        int sum=a+b;
+        string s3 = to_string(sum);
+        s3.erase ( s3.find_last_not_of('0') + 1, std::string::npos );
+        reverse(s3.begin(),s3.end());
+        cout<<s3<<endl;
     }
     return 0;
 }
