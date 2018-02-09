@@ -1,3 +1,6 @@
+//
+// Created by abdullah on 2/9/18.
+//
 /// Containers Start
 #include <iostream>
 #include <string>
@@ -64,7 +67,7 @@ using namespace std;
 
 
 /// Functions Start
- template < class T > T Multiply( T a, T b ){return a * b ;}
+template < class T > T Multiply( T a, T b ){return a * b ;}
 template < class T > T larger( T a, T b ){return ( a > b ? a : b );}
 template < class T > T smaller( T a, T b ){return ( a < b ? a : b );}
 template<class T> T gcd(T a,T b){if(b == 0)return a;return gcd(b,a%b);}
