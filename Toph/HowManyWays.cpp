@@ -1,3 +1,6 @@
+//
+// Created by abdullah on 2/10/18.
+//
 /// Containers Start
 #include <iostream>
 #include <string>
@@ -64,7 +67,7 @@ using namespace std;
 
 
 /// Functions Start
- template < class T > T Multiply( T a, T b ){return a * b ;}
+template < class T > T Multiply( T a, T b ){return a * b ;}
 template < class T > T larger( T a, T b ){return ( a > b ? a : b );}
 template < class T > T smaller( T a, T b ){return ( a < b ? a : b );}
 template<class T> T gcd(T a,T b){if(b == 0)return a;return gcd(b,a%b);}
@@ -108,34 +111,18 @@ typedef  vector< pii >           vii;
 /// I/O
 int main()
 {
-    string msg;
-    cin>>msg;
-    if(msg.length()>1)
-    {
-        int cnt=0;
+    //ignore the templtes :v :v :V
+    int test;
+    cin>>test;
+    for (int t =1 ; t <=test; ++t) {
+        int x,y;
+        cin>>x>>y;
+        for (int i = 0; i <x ; ++i) {
+            int a,b;
+            cin>>a>>b;
+        }
+        cout<<"Case "<<t<<": "<<1<<endl;
 
-        for (int i = 0; i <msg.length() ; ++i) {
-            if(msg[i]=='V'&&msg[i+1]=='K')
-            {
-                cnt++;
-            }
-        }
-        for (int i = 0; i <msg.length() ; ++i) {
-            if(msg[i]=='V'&&msg[i+1]=='V'&&msg[i+2]!='K')
-            {
-                cnt++;
-                break;
-            }
-            else if(msg[i-1]!='V'&&msg[i]=='K'&&msg[i+1]=='K')
-            {
-                cnt++;
-                break;
-            }
-        }
-        cout<<cnt<<endl;
-    } else{
-        cout<<0<<endl;
     }
-
     return 0;
 }
