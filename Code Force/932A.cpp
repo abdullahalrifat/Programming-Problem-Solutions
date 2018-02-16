@@ -64,7 +64,7 @@ using namespace std;
 
 
 /// Functions Start
- template < class T > T Multiply( T a, T b ){return a * b ;}
+template < class T > T Multiply( T a, T b ){return a * b ;}
 template < class T > T larger( T a, T b ){return ( a > b ? a : b );}
 template < class T > T smaller( T a, T b ){return ( a < b ? a : b );}
 template<class T> T gcd(T a,T b){if(b == 0)return a;return gcd(b,a%b);}
@@ -108,25 +108,11 @@ typedef  vector< pii >           vii;
 /// I/O
 int main()
 {
-    int loops;
-    cin>>loops;
+    string input;
+    cin>>input;
 
-    while(loops--)
-    {
-        int n,a,d;
-        cin>>n>>a>>d;
-        long long int t=a;
-        long long int sum=t;
-        n--;
-        while (n--)
-        {
-            t=t+d;
-            sum+=t;
-        }
-        cout<<sum<<endl;
-    }
-
-
-
+    string s=input;
+    reverse(s.begin(),s.end());
+    cout<<input<<s<<endl;
     return 0;
 }
