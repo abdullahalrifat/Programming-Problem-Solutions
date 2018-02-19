@@ -1,132 +1,89 @@
-/// Containers Start
-#include <iostream>
-#include <string>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <vector>
-#include <utility>
-#include <iomanip>
-#include <sstream>
-#include <bitset>
-#include <cstdlib>
-#include <iterator>
-#include <algorithm>
-/// C Header Files
-#include <cstdio>
-#include <cctype>
-#include <cmath>
-#include <math.h>
-#include <ctime>
-#include <cstring>
-/// Containers End
-
+#include <bits/stdc++.h>
 
 using namespace std;
 
-/// Math Start
-#define PI                    acos(-1.0)
-#define Pi                    3.141592653589793
-#define SQR(n)                ( n * n )
-/// Math End
+#define EPS 1e-9
+#define For(i,N) FOR(i,N)
+#define Forr(i,a,b) FORR(i,a,b)
+#define Fotr(i,a,b,c) FOTR(i,a,b,c)
+#define FOR(i,N) FORR(i, 0, N)
+#define FORR(i,a,b) FOTR(i, a, b, 1)
+#define FOTR(i,a,b,c) for(int i=(a);i<(b);i+=(c))
+#define FOREACH(i,x) for(__typeof__((x).begin())i=(x).begin();i!=(x).end();i++)
+#define MEM(a,x) memset(a,x,sizeof(a))
+#define BCHK(a,x) (((a)>>(x))&1)
+#define BSET(a,x) ((a)|(1<<(x)))
+#define BCLR(a,x) ((a)&(~(1<<(x))))
+#define BTGL(a,x) ((a)^(1<<(x)))
+#define FMT(...) (sprintf(CRTBUFF, __VA_ARGS__)?CRTBUFF:0)
+#define read() freopen("input.txt","r",stdin)
+#define write() freopen("output.txt","w",stdout)
+#define cpp_io() {ios_base::sync_with_stdio(false);cin.tie(NULL);}
+#define BUFFSIZE 30000
+#define INF 1000000000
+#define MAX 300010
+#define MOD 1000000007
+#define pb push_back
+#define mkpr make_pair
+#define pii pair<int, int>
+#define PI acos(-1)
+#define ll double
+#define fi first
+#define si second
+#define all(x) x.begin(), x.end()
+
+char CRTBUFF[BUFFSIZE];
+#define dbg(args...) {cerr<<"-->";debugger::call(#args,args);cerr<<"\n";}
+struct debugger {
+    static void call(const char* it) {}
+    template<typename T, typename ... aT>
+    static void call(const char* it, T a, aT... rest) {
+        string b;
+        for (; *it&&*it != ','; ++it) if (*it != ' ')b += *it;
+        cerr << b << "=" << a << " ";
+        call(++it, rest...);
+    }
+};
 
 
-/// Pair Start
-#define ff                    first
-#define ss                    second
-#define mp                    make_pair
-/// Pair End
+struct Line {
+    ll a, b, get(ll x) { return a * x + b; }
+};
 
+struct ConvexHull {
+    int size;
+    Line *hull;
 
-/// Array Start
-#define SET(a)                memset( a, -1,    sizeof a )
-#define CLR(a)                memset( a,  0,    sizeof a )
-#define MEM(a,val)            memset( a,  val,  sizeof(a) )
-/// Array End
-
-
-/// Extra Start
-#define nn                    '\n'
-#define pb                    push_back
-#define SS                    stringstream
-#define ull                   unsigned long long
-#define mod                   1000000007
-#define INF                   2147483647
-#define SIZE                  2000001
-#define _cin                  ios_base::sync_with_stdio(0);  cin.tie(0);
-#define sz(a)                 int((a).size())
-#define space                 " "
-#define all(x)                (x).begin(), (x).end()
-#define Ignore                cin.ignore()
-#define StringToInt           if ( ! (istringstream(s) >> n) ) n = 0;
-/// Extra End
-
-
-/// Functions Start
- template < class T > T Multiply( T a, T b ){return a * b ;}
-template < class T > T larger( T a, T b ){return ( a > b ? a : b );}
-template < class T > T smaller( T a, T b ){return ( a < b ? a : b );}
-template<class T> T gcd(T a,T b){if(b == 0)return a;return gcd(b,a%b);}
-template<class T> T lcm(T a, T b ){return (a*b)/gcd(a,b);}
-template < class T > string converter( T n ){SS x;x << n;return x.str();}
-/// Functions End
-
-/// TypeDef Start
-typedef  long long int           ll;
-typedef  map<string,int>         msi;
-typedef  map<int,int>	         mii;
-typedef  map<ll, ll>             mll;
-typedef  map<char,int>           mci;
-typedef  map<int,string>	     mis;
-typedef  pair<int,int> 	         pii;
-typedef  pair<string, int>       psi;
-typedef  pair<string, string>    pss;
-typedef  vector<int> 	         vi;
-typedef  vector<string> 	     vs;
-typedef  vector<char>	         vc;
-typedef  vector<bool>            vb;
-typedef  vector< pii >           vii;
-/// TypeDef End
-/// I/O Start
-#define sf                    scanf
-#define pf                    printf
-#define pc                    %
-#define nd                    &
-#define sf1(a)                scanf("%d", &a)
-#define sf2(a,b)              scanf("%d %d",&a, &b)
-#define sf3(a,b,c)            scanf("%d %d %d", &a, &b, &c)
-#define sf4(a,b,c, d)         scanf("%d %d %d %d", &a, &b, &c, &d)
-
-#define sf1ll(a)              scanf("%I64d", &a)
-#define sf2ll(a,b)            scanf("%I64d %I64d", &a, &b)
-#define sf3ll(a,b,c)          scanf("%I64d %I64d %I64d", &a, &b, &c)
-#define sf4ll(a,b,c, d)       scanf("%I64d %I64d %I64d %I64d", &a, &b, &c, &d)
-
-#define READ                  freopen("input.txt", "r", stdin);
-#define WRITE                 freopen("output.txt", "w", stdout);
-/// I/O
-int main()
-{
-    int loops;
-    cin>>loops;
-
-    while(loops--)
-    {
-        int n,a,d;
-        cin>>n>>a>>d;
-        long long int t=a;
-        long long int sum=t;
-        n--;
-        while (n--)
-        {
-            t=t+d;
-            sum+=t;
-        }
-        cout<<sum<<endl;
+    ConvexHull(int maxSize) {
+        hull = new Line[++maxSize], size = 0;
     }
 
+    bool is_bad(int curr, int prev, int next) {
+        Line c = hull[curr], p = hull[prev], n = hull[next];
+        return (c.b - n.b) * (c.a - p.a) <= (p.b - c.b) * (n.a - c.a);
+    }
 
+    void add(ll a, ll b) {
+        hull[size++] = (Line){a, b};
+        while (size > 2 && is_bad(size - 2, size - 3, size - 1))
+            hull[size - 2] = hull[size - 1], size--;
+    }
 
-    return 0;
+    ll get(ll x) {
+        int l = -1, r = size - 1;
+        while (r - l > 1) {
+            int m = (l + r) / 2;
+            if (hull[m].get(x) >= hull[m + 1].get(x))l = m;
+            else r = m;
+        }
+        return hull[r].get(x);
+    }
+};
+int main(){
+    cpp_io();
+    #ifdef LOCAL
+        read();
+        //write();
+    #endif
+   return 0;
 }
