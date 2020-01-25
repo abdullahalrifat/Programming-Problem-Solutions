@@ -3,5 +3,5 @@ project(AllSolutions)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES HashCode_2020/PractiseRound/slice.cpp)
 add_executable(AllSolutions ${SOURCE_FILES})
