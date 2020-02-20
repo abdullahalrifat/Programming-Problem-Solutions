@@ -1,10 +1,9 @@
 // CPP program to find Minimum number of times A
 // has to be repeated such that B is a substring of it
 #include <bits/stdc++.h>
-
-#define input freopen("a_example.in", "r", stdin);
-#define output freopen("a_example.out", "w", stdout);
-#define sync            ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define input freopen("/mnt/sda3/Programming-Problem-Solutions/HashCode_2020/PractiseRound/e_also_big.in", "r", stdin);
+#define output freopen("/mnt/sda3/Programming-Problem-Solutions/HashCode_2020/PractiseRound/e_also_big.out", "w", stdout);
+#define sync  ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 using namespace std;
 bool sortbysec(const pair<int,int> &a,
@@ -14,11 +13,10 @@ bool sortbysec(const pair<int,int> &a,
 }
 int main()
 {
-    //sync;
-    //input;
-    //output;
-    //freopen("a_example.in", "r", stdin);
-    //freopen("a_example.out", "w", stdout);
+    sync;
+    input;
+    output;
+
     int max, type;
     cin>>max>>type;
     vector<int> types;
@@ -47,6 +45,7 @@ int main()
     {
         cout<<finalList[i].first<<" ";
     }
+    cout<<endl;
     fclose(stdin);
     fclose(stdout);
     return 0;
