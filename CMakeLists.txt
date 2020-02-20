@@ -3,5 +3,5 @@ project(AllSolutions)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES HashCode_2020/PractiseRound/slice.cpp)
+set(SOURCE_FILES HashCode_2020/OnlineQualificationRound/main_test.cpp)
 add_executable(AllSolutions ${SOURCE_FILES})
